@@ -10,11 +10,19 @@
   "region": "wielkopolskie",
   "maps_query": "Kebab Ahil, Kościuszki 26, 64-700 Czarnków",
   "review_link": "https://g.page/r/CXBxlwxTfJYeEBM/review",
-  "facebook": "",
+  "facebook": "https://www.facebook.com/KebabAhilCzarnkow",
   "instagram": "https://www.instagram.com/kebabahil_czarnkow/",
   "season": "zimowy",
-  "hours_summer": { "days": "poniedziałek – niedziela", "open": "10:00", "close": "23:00" },
-  "hours_winter": { "days": "poniedziałek – niedziela", "open": "10:00", "close": "24:00" },
+  "hours_summer": {
+    "days": "poniedziałek – niedziela",
+    "open": "10:00",
+    "close": "23:00"
+  },
+  "hours_winter": {
+    "days": "poniedziałek – niedziela",
+    "open": "10:00",
+    "close": "24:00"
+  },
   "delivery": {
     "area": "Czarnków",
     "hours": "12:00 – 21:00",
@@ -27,7 +35,5 @@
   "student_discount": "Rabat dla studentów -20%",
   "seo_title": "Kebab Ahil Czarnków – kebab, dowóz, menu | ul. Kościuszki 26",
   "seo_description": "Kebab Ahil w Czarnkowie: kurczak kraftowy, wołowina, świeże warzywa i 6 sosów. Rozmiary S, XL, XXL od 15 zł. Na miejscu, na wynos i z dowozem po Czarnkowie. Tel. 539 106 018.",
-  "og_image": "/media/og-kebab-ahil.jpg",
-  "ga4_id": "",
-  "gsc_verification": ""
+  "og_image": "/media/og-kebab-ahil.jpg"
 }
