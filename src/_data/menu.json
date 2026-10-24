@@ -1,0 +1,114 @@
+{
+  "intro": "Mięso do wyboru: kurczak kraftowy, wołowina lub mieszane. Sosy: ostry, łagodny, czosnkowy, mieszany, ketchup, pasta ostra.",
+  "note": "Opakowanie na wynos: 0,50 zł, pozostałe: 1 zł. Podana oferta cenowa może ulec zmianie.",
+  "categories": [
+    {
+      "name": "Kebab na cienkim cieście",
+      "columns": ["S", "XL", "XXL"],
+      "items": [
+        { "name": "Kebab Rolo", "desc": "mięso, surówka, sos, pita", "prices": ["15 zł", "20 zł", "25 zł"] },
+        { "name": "Kebab Rolo z samym mięsem", "desc": "mięso, sos, pita", "prices": ["20 zł", "24 zł", "30 zł"] },
+        { "name": "Kebab Rolo z frytkami", "desc": "mięso, frytki, sos, pita", "prices": ["20 zł", "24 zł", "30 zł"] }
+      ]
+    },
+    {
+      "name": "Kebab tortilla",
+      "columns": ["S", "XL", "XXL"],
+      "items": [
+        { "name": "Kebab Tortilla", "desc": "mięso, surówka, sos, tortilla", "prices": ["17 zł", "22 zł", "30 zł"] },
+        { "name": "Kebab Tortilla z samym mięsem", "desc": "mięso, sos, tortilla", "prices": ["22 zł", "26 zł", "32 zł"] },
+        { "name": "Kebab Tortilla z frytkami", "desc": "mięso, frytki, sos, tortilla", "prices": ["22 zł", "26 zł", "32 zł"] }
+      ]
+    },
+    {
+      "name": "Kebab w bułce",
+      "columns": ["S", "XXL"],
+      "items": [
+        { "name": "Kebab w bułce", "desc": "mięso, surówka, sos, bułka", "prices": ["20 zł", "27 zł"] },
+        { "name": "Bułka z samym mięsem", "desc": "mięso, sos, bułka", "prices": ["25 zł", "32 zł"] },
+        { "name": "Kebab w bułce z frytkami", "desc": "mięso, frytki, sos, bułka", "prices": ["25 zł", "32 zł"] }
+      ]
+    },
+    {
+      "name": "Kebab box",
+      "columns": ["S", "XXL"],
+      "items": [
+        { "name": "Kebab Box", "desc": "mięso, surówka, sos, frytki", "prices": ["20 zł", "25 zł"] },
+        { "name": "Kebab Box z samym mięsem", "desc": "mięso, sos, frytki", "prices": ["25 zł", "30 zł"] },
+        { "name": "Chicken Nuggets", "desc": "mięso, surówka, sos, frytki", "prices": ["18 zł", "24 zł"] },
+        { "name": "Chicken Strips", "desc": "mięso, sos, frytki", "prices": ["20 zł", "25 zł"] },
+        { "name": "Chicken Wings", "desc": "mięso, surówka, sos, frytki", "prices": ["18 zł", "24 zł"] },
+        { "name": "Paluszki rybne", "desc": "mięso, sos, frytki", "prices": ["18 zł", "24 zł"] }
+      ]
+    },
+    {
+      "name": "Dania obiadowe",
+      "columns": ["S", "XL", "XXL"],
+      "items": [
+        { "name": "Danie obiadowe", "desc": "mięso, surówka, sos, frytki", "prices": ["25 zł", "30 zł", "35 zł"] },
+        { "name": "Kapsalon", "desc": "frytki, mięso, ser, surówka", "prices": ["20 zł", "30 zł", ""] }
+      ]
+    },
+    {
+      "name": "Wegetariańskie",
+      "columns": ["S", "XL", "XXL"],
+      "items": [
+        { "name": "Kebab pita z falafelem", "desc": "kotleciki z ciecierzycy z przyprawami, surówka, sos, pita", "prices": ["12 zł", "15 zł", "20 zł"] },
+        { "name": "Danie z falafelem", "desc": "kotleciki z ciecierzycy z przyprawami, surówka, sos, frytki", "prices": ["18 zł", "", "22 zł"] },
+        { "name": "Box z falafelem", "desc": "kotleciki z ciecierzycy z przyprawami, surówka, sos, frytki", "prices": ["15 zł", "", "19 zł"] }
+      ]
+    },
+    {
+      "name": "Wrap i burger",
+      "columns": ["Cena"],
+      "items": [
+        { "name": "Wrap z nuggets", "desc": "nuggets, surówka, sos, pita", "prices": ["15 zł"] },
+        { "name": "Wrap ze strips", "desc": "strips, surówka, sos, pita", "prices": ["20 zł"] },
+        { "name": "Burger", "desc": "", "prices": ["10 zł"] }
+      ]
+    },
+    {
+      "name": "Sałatki",
+      "columns": ["Cena"],
+      "items": [
+        { "name": "Sałatka z kurczaka", "desc": "surówka, pomidory, ogórek, cebula, sos, kebab z kurczaka", "prices": ["20 zł"] },
+        { "name": "Sałatka grecka", "desc": "sałata lodowa, papryka, oliwki, ogórek, cebula, ser feta", "prices": ["16 zł"] },
+        { "name": "Sałatka klasyczna", "desc": "wszystkie warzywa, sos", "prices": ["8 zł"] }
+      ]
+    },
+    {
+      "name": "Zestaw",
+      "columns": ["Cena"],
+      "items": [
+        { "name": "Kebab + Pepsi Zero Cukru 0,5 l", "desc": "zestaw", "prices": ["26 zł"] }
+      ]
+    },
+    {
+      "name": "Dodatki",
+      "columns": ["Cena"],
+      "items": [
+        { "name": "Frytki", "desc": "", "prices": ["od 8 zł"] },
+        { "name": "Bułka", "desc": "", "prices": ["2 zł"] },
+        { "name": "Ser", "desc": "", "prices": ["2 zł"] },
+        { "name": "Dodatkowa porcja mięsa", "desc": "", "prices": ["8 zł"] },
+        { "name": "Sos", "desc": "", "prices": ["3 zł"] },
+        { "name": "Pita", "desc": "", "prices": ["2 zł"] },
+        { "name": "Porcja mięsa", "desc": "", "prices": ["20 zł"] }
+      ]
+    },
+    {
+      "name": "Napoje",
+      "columns": ["Cena"],
+      "items": [
+        { "name": "Ayran", "desc": "", "prices": ["5 zł"] },
+        { "name": "Sok", "desc": "", "prices": ["5 zł"] },
+        { "name": "Woda", "desc": "", "prices": ["4 zł"] },
+        { "name": "Pepsi 330 ml", "desc": "", "prices": ["5 zł"] },
+        { "name": "Pepsi 500 ml", "desc": "", "prices": ["6 zł"] },
+        { "name": "Lipton 500 ml", "desc": "", "prices": ["6 zł"] },
+        { "name": "Sok mango", "desc": "", "prices": ["6 zł"] },
+        { "name": "Napój energetyczny", "desc": "", "prices": ["5 zł"] }
+      ]
+    }
+  ]
+}

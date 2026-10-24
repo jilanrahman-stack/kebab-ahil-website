@@ -1,0 +1,36 @@
+{
+  "promo_show": true,
+  "promo_text": "Zestaw: kebab + Pepsi Zero Cukru 0,5 l za 26 zł",
+  "hero_eyebrow": "Czarnków · ul. Kościuszki 26",
+  "hero_title": "Prawdziwy kebab prosto z rożna.",
+  "hero_text": "Kurczak kraftowy, wołowina albo mieszane. Świeże warzywa, 6 sosów i rozmiary od S do XXL. Na miejscu, na wynos i z dowozem po Czarnkowie.",
+  "hero_image": "/media/kebab-box.jpg",
+  "highlights": [
+    { "title": "Kurczak kraftowy", "text": "Kawałki mięsa w marynacie, pieczone na rożnie i krojone na bieżąco. Do wyboru także wołowina lub mieszane.", "image": "/media/kurczak-kraftowy-rozen.jpg" },
+    { "title": "Świeże warzywa", "text": "Kapusta, czerwona kapusta, marchewka, ogórek, pomidor i cebula – wybierz, co lubisz.", "image": "/media/swieze-warzywa.jpg" },
+    { "title": "Chrupiące frytki", "text": "Złociste i gorące – w boksie, w zestawie albo osobno, z ketchupem lub ulubionym sosem.", "image": "/media/frytki.jpg" }
+  ],
+  "popular": [
+    { "name": "Kebab Rolo", "desc": "mięso, surówka, sos, pita", "price": "od 15 zł" },
+    { "name": "Kebab Tortilla", "desc": "mięso, surówka, sos, tortilla", "price": "od 17 zł" },
+    { "name": "Kebab Box", "desc": "mięso, surówka, sos, frytki", "price": "od 20 zł" },
+    { "name": "Kapsalon", "desc": "frytki, mięso, ser, surówka", "price": "od 20 zł" }
+  ],
+  "about_title": "Kebab Ahil w Czarnkowie",
+  "about_text": "Od 2024 roku robimy kebaby w centrum Czarnkowa, przy ul. Kościuszki 26. Mięso kroimy prosto z rożna, warzywa przygotowujemy na miejscu, a każdy kebab składasz po swojemu: wybierasz mięso, sos i rozmiar. Zjesz u nas przy stoliku, zabierzesz na wynos albo zamówisz z dowozem.",
+  "about_image": "/media/lokal-kebab-ahil-czarnkow.jpg",
+  "gallery": [
+    "/media/kebab-box-warzywa.jpg",
+    "/media/kurczak-kraftowy-rozen.jpg",
+    "/media/frytki.jpg",
+    "/media/sala-kebab-ahil.jpg"
+  ],
+  "faq": [
+    { "q": "Czy Kebab Ahil dowozi jedzenie?", "a": "Tak. Dowozimy po Czarnkowie w godzinach 12:00–21:00. Minimalne zamówienie to 40 zł, dostawa kosztuje 5 zł, a poza Czarnkowem doliczamy 1 zł za każdy kilometr. W środy nie ma dostawy." },
+    { "q": "W jakich godzinach jesteście otwarci?", "a": "Codziennie od 10:00. W sezonie letnim do 23:00, w sezonie zimowym do 24:00." },
+    { "q": "Jakie mięso jest w kebabie?", "a": "Do wyboru jest kurczak kraftowy, wołowina albo mieszane." },
+    { "q": "Czy macie coś wegetariańskiego?", "a": "Tak, falafel – kotleciki z ciecierzycy z przyprawami. Kebab pita z falafelem od 12 zł, box z falafelem od 15 zł i danie z falafelem od 18 zł." },
+    { "q": "Jakie sosy można wybrać?", "a": "Ostry, łagodny, czosnkowy, mieszany, ketchup i pasta ostra." },
+    { "q": "Jak można zapłacić?", "a": "Gotówką, kartą lub BLIK." }
+  ]
+}

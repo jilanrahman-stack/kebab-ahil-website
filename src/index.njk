@@ -1,0 +1,126 @@
+---
+layout: base.njk
+permalink: /
+---
+<section class="hero" style="--hero:url('{{ home.hero_image }}')">
+  <div class="hero-in wrap">
+    <p class="eyebrow">{{ home.hero_eyebrow }}</p>
+    <h1>{{ home.hero_title }}</h1>
+    <p class="lead">{{ home.hero_text }}</p>
+    <div class="cta">
+      <a class="btn" href="tel:{{ site.phone }}" data-ev="click_to_call">Zadzwoń: {{ site.phone_display }}</a>
+      <a class="btn btn-ghost" href="/menu/">Zobacz menu</a>
+    </div>
+    <ul class="facts">
+      <li><b>Dziś</b> {{ site | hoursNow }}</li>
+      <li><b>Dowóz</b> {{ site.delivery.hours }} · od {{ site.delivery.min_order }}</li>
+      <li><b>Adres</b> {{ site.street }}, {{ site.city }}</li>
+    </ul>
+  </div>
+</section>
+
+<section class="wrap block">
+  <h2 class="h2">Co robimy najlepiej</h2>
+  <div class="cards">
+    {% for h in home.highlights %}
+    <article class="card">
+      <img src="{{ h.image }}" alt="{{ h.title }} – Kebab Ahil Czarnków" loading="lazy" width="600" height="450">
+      <div class="card-b"><h3>{{ h.title }}</h3><p>{{ h.text }}</p></div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap block">
+    <h2 class="h2">Najczęściej zamawiane</h2>
+    <div class="popular">
+      {% for p in home.popular %}
+      <div class="pop"><div><h3>{{ p.name }}</h3><p>{{ p.desc }}</p></div><span class="price">{{ p.price }}</span></div>
+      {% endfor %}
+    </div>
+    <p class="center"><a class="btn" href="/menu/">Pełne menu z cenami</a></p>
+  </div>
+</section>
+
+<section class="wrap block split" id="dowoz">
+  <div>
+    <p class="eyebrow">Dowóz</p>
+    <h2 class="h2">Przywieziemy kebaba do Ciebie</h2>
+    <ul class="list">
+      <li>Dowóz na terenie: <b>{{ site.delivery.area }}</b>, koszt <b>{{ site.delivery.fee }}</b></li>
+      <li>Godziny dowozu: <b>{{ site.delivery.hours }}</b></li>
+      <li>Minimalne zamówienie: <b>{{ site.delivery.min_order }}</b></li>
+      <li>{{ site.delivery.outside }}</li>
+      <li><b>{{ site.delivery.no_delivery }}</b></li>
+    </ul>
+    <a class="btn" href="tel:{{ site.phone }}" data-ev="click_to_call">Zamów telefonicznie: {{ site.phone_display }}</a>
+  </div>
+  <img class="split-img" src="/media/kebab-box-warzywa.jpg" alt="Kebab box z frytkami i świeżymi warzywami – dowóz Czarnków" loading="lazy" width="600" height="800">
+</section>
+
+{% if reviews.length %}
+<section class="band">
+  <div class="wrap block">
+    <h2 class="h2">Opinie gości</h2>
+    <div class="reviews">
+      {% for r in reviews %}
+      <figure class="review">
+        <div class="stars" aria-label="{{ r.stars }} na 5">{% for i in range(0, r.stars) %}★{% endfor %}</div>
+        <blockquote>„{{ r.text }}”</blockquote>
+        <figcaption>{{ r.author }} · {{ r.source }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+    <p class="center"><a class="btn btn-ghost" href="{{ site.review_link }}" target="_blank" rel="noopener" data-ev="review_click">Zostaw opinię w Google</a></p>
+  </div>
+</section>
+{% endif %}
+
+<section class="wrap block split rev">
+  <img class="split-img" src="{{ home.about_image }}" alt="Lokal Kebab Ahil, {{ site.street }}, {{ site.city }}" loading="lazy" width="600" height="600">
+  <div>
+    <p class="eyebrow">O nas</p>
+    <h2 class="h2">{{ home.about_title }}</h2>
+    <p>{{ home.about_text }}</p>
+    <p class="muted">{{ site.payment }}. {{ site.student_discount }}.</p>
+  </div>
+</section>
+
+{% if home.gallery.length %}
+<section class="wrap block">
+  <h2 class="h2">Galeria</h2>
+  <div class="gallery">
+    {% for g in home.gallery %}<img src="{{ g }}" alt="Kebab Ahil Czarnków – zdjęcie {{ loop.index }}" loading="lazy" width="400" height="400">{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="band">
+  <div class="wrap block">
+    <h2 class="h2">Najczęstsze pytania</h2>
+    <div class="faq">
+      {% for f in home.faq %}<details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="wrap block split" id="kontakt">
+  <div>
+    <p class="eyebrow">Kontakt i dojazd</p>
+    <h2 class="h2">Zapraszamy</h2>
+    <p class="addr">{{ site.street }}<br>{{ site.postal_code }} {{ site.city }}</p>
+    <table class="hours">
+      <tr><th>Sezon letni</th><td>{{ site.hours_summer.days }}<br>{{ site.hours_summer.open }} – {{ site.hours_summer.close }}</td></tr>
+      <tr><th>Sezon zimowy</th><td>{{ site.hours_winter.days }}<br>{{ site.hours_winter.open }} – {{ site.hours_winter.close }}</td></tr>
+    </table>
+    <div class="cta">
+      <a class="btn" href="tel:{{ site.phone }}" data-ev="click_to_call">{{ site.phone_display }}</a>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination={{ site.maps_query | urlencode }}" target="_blank" rel="noopener" data-ev="directions_click">Wyznacz trasę</a>
+    </div>
+  </div>
+  <div class="map" id="map" data-q="{{ site.maps_query }}">
+    <button class="btn btn-ghost" id="load-map">Pokaż mapę Google</button>
+    <p class="muted small">Mapa ładuje się dopiero po kliknięciu.</p>
+  </div>
+</section>

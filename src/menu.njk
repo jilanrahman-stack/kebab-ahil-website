@@ -1,0 +1,38 @@
+---
+layout: base.njk
+permalink: /menu/
+title: "Menu i ceny – Kebab Ahil Czarnków | kebab, box, tortilla, falafel"
+description: "Pełne menu Kebab Ahil w Czarnkowie: kebab rolo od 15 zł, tortilla, kebab w bułce, kebab box, dania obiadowe, kapsalon, falafel, sałatki i napoje. Dowóz po Czarnkowie."
+---
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Kebab Ahil · {{ site.city }}</p>
+    <h1>Menu i ceny</h1>
+    <p class="lead">{{ menu.intro }}</p>
+    <nav class="chips" aria-label="Kategorie menu">
+      {% for c in menu.categories %}<a href="#{{ c.name | slugify }}">{{ c.name }}</a>{% endfor %}
+    </nav>
+  </div>
+</section>
+
+<section class="wrap block menu">
+  {% for c in menu.categories %}
+  <div class="mcat" id="{{ c.name | slugify }}">
+    <div class="mhead">
+      <h2>{{ c.name }}</h2>
+      <div class="cols">{% for col in c.columns %}<span>{{ col }}</span>{% endfor %}</div>
+    </div>
+    {% for it in c.items %}
+    <div class="mrow">
+      <div class="mname"><h3>{{ it.name }}</h3>{% if it.desc %}<p>{{ it.desc }}</p>{% endif %}</div>
+      <div class="cols">{% for i in range(0, c.columns.length) %}<span>{{ it.prices[i] or "–" }}</span>{% endfor %}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+  <p class="muted small">{{ menu.note }}</p>
+  <div class="menu-cta">
+    <p><b>Dowóz po Czarnkowie</b> {{ site.delivery.hours }} · od {{ site.delivery.min_order }} · dostawa {{ site.delivery.fee }} · {{ site.delivery.no_delivery | lower }}.</p>
+    <a class="btn" href="tel:{{ site.phone }}" data-ev="click_to_call">Zamów: {{ site.phone_display }}</a>
+  </div>
+</section>

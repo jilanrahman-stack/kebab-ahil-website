@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title or site.seo_title }}</title>
+<meta name="description" content="{{ description or site.seo_description }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{% if site.gsc_verification %}<meta name="google-site-verification" content="{{ site.gsc_verification }}">{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="{{ title or site.seo_title }}">
+<meta property="og:description" content="{{ description or site.seo_description }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}{{ site.og_image }}">
+<meta name="theme-color" content="#0d0b0a">
+<link rel="icon" type="image/png" href="/media/favicon.png">
+<link rel="preload" href="/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/lora-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">{{ site | schema(menu) | safe }}</script>
+{% if site.ga4_id %}
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied', analytics_storage:'denied', wait_for_update: 500});
+  try { if (localStorage.getItem('ka_consent') === 'yes') gtag('consent', 'update', {analytics_storage:'granted'}); } catch(e) {}
+  gtag('js', new Date());
+  gtag('config', '{{ site.ga4_id }}');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4_id }}"></script>
+{% endif %}
+</head>
+<body>
+{% if home.promo_show and home.promo_text %}<div class="promo">{{ home.promo_text }}</div>{% endif %}
+<header class="nav">
+  <a href="/" class="brand" aria-label="Kebab Ahil – strona główna"><img src="/media/logo.png" alt="Kebab Ahil Czarnków" width="140" height="57"></a>
+  <nav class="links">
+    <a href="/menu/">Menu</a>
+    <a href="/#dowoz">Dowóz</a>
+    <a href="/#kontakt">Kontakt</a>
+    <a class="btn btn-sm" href="tel:{{ site.phone }}" data-ev="click_to_call">Zadzwoń</a>
+  </nav>
+</header>
+
+<main>
+{{ content | safe }}
+</main>
+
+<footer class="foot" id="stopka">
+  <div class="wrap foot-grid">
+    <div>
+      <img src="/media/logo.png" alt="Kebab Ahil" width="150" height="62" loading="lazy">
+      <p>{{ site.tagline }}</p>
+    </div>
+    <div>
+      <h3>Adres</h3>
+      <p>{{ site.street }}<br>{{ site.postal_code }} {{ site.city }}</p>
+      <p><a href="tel:{{ site.phone }}" data-ev="click_to_call">tel. {{ site.phone_display }}</a></p>
+    </div>
+    <div>
+      <h3>Godziny</h3>
+      <p>{{ site | hoursNow }}<br><small>Sezon letni: {{ site.hours_summer.open }}–{{ site.hours_summer.close }} · zimowy: {{ site.hours_winter.open }}–{{ site.hours_winter.close }}</small></p>
+      <p>
+        {% if site.facebook %}<a href="{{ site.facebook }}" rel="noopener" target="_blank">Facebook</a> · {% endif %}
+        {% if site.instagram %}<a href="{{ site.instagram }}" rel="noopener" target="_blank">Instagram</a>{% endif %}
+      </p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">© {{ "now" | year }} Kebab Ahil · <a href="/polityka-prywatnosci/">Polityka prywatności</a>{% if site.ga4_id %} · <a href="#" id="cookie-settings">Ustawienia cookies</a>{% endif %}</div>
+</footer>
+
+<a class="callbar" href="tel:{{ site.phone }}" data-ev="click_to_call">Zadzwoń i zamów: {{ site.phone_display }}</a>
+
+{% if site.ga4_id %}
+<div class="consent" id="consent" hidden>
+  <p>Używamy plików cookies Google Analytics, żeby wiedzieć, jak korzystasz ze strony. Możesz się zgodzić lub odmówić. <a href="/polityka-prywatnosci/">Więcej</a></p>
+  <div><button id="c-no" class="btn btn-ghost">Odrzuć</button><button id="c-yes" class="btn">Akceptuję</button></div>
+</div>
+{% endif %}
+<script src="/js/site.js" defer></script>
+</body>
+</html>
