@@ -1,0 +1,149 @@
+# Pages CMS – panel do edycji strony Kebab Ahil (app.pagescms.org)
+media:
+  input: src/media
+  output: /media
+  categories: [image]
+
+content:
+  - name: site
+    label: "⚙️ Dane firmy, godziny, dowóz, SEO i Google"
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - { name: name, label: Nazwa firmy, type: string }
+      - { name: tagline, label: Hasło (stopka), type: string }
+      - { name: url, label: "Adres strony (np. https://kebab-ahil.pages.dev) – bez ukośnika na końcu", type: string }
+      - { name: phone, label: "Telefon do linku (format +48539106018)", type: string }
+      - { name: phone_display, label: Telefon wyświetlany, type: string }
+      - { name: street, label: Ulica, type: string }
+      - { name: postal_code, label: Kod pocztowy, type: string }
+      - { name: city, label: Miasto, type: string }
+      - { name: region, label: Województwo, type: string }
+      - { name: maps_query, label: Zapytanie do Map Google, type: string }
+      - { name: review_link, label: Link do opinii Google, type: string }
+      - { name: facebook, label: Link do Facebooka, type: string }
+      - { name: instagram, label: Link do Instagrama, type: string }
+      - name: season
+        label: Aktualny sezon (zmienia godziny w Google i na stronie)
+        type: select
+        options:
+          values: [zimowy, letni]
+      - name: hours_summer
+        label: Godziny – sezon letni
+        type: object
+        fields:
+          - { name: days, label: Dni, type: string }
+          - { name: open, label: Otwarcie, type: string }
+          - { name: close, label: Zamknięcie, type: string }
+      - name: hours_winter
+        label: Godziny – sezon zimowy
+        type: object
+        fields:
+          - { name: days, label: Dni, type: string }
+          - { name: open, label: Otwarcie, type: string }
+          - { name: close, label: Zamknięcie, type: string }
+      - name: delivery
+        label: Dowóz
+        type: object
+        fields:
+          - { name: area, label: Obszar, type: string }
+          - { name: hours, label: Godziny dowozu, type: string }
+          - { name: min_order, label: Minimalne zamówienie, type: string }
+          - { name: fee, label: Koszt dostawy, type: string }
+          - { name: outside, label: Poza obszarem, type: string }
+          - { name: no_delivery, label: Dzień bez dostawy, type: string }
+      - { name: payment, label: Płatności, type: string }
+      - { name: student_discount, label: Rabat dla studentów, type: string }
+      - { name: seo_title, label: "SEO – tytuł strony głównej (max ~60 znaków)", type: string }
+      - { name: seo_description, label: "SEO – opis (max ~155 znaków)", type: text }
+      - { name: og_image, label: Obrazek do udostępnień (Facebook), type: image }
+      - { name: ga4_id, label: "Google Analytics 4 – Measurement ID (np. G-XXXXXXXXXX)", type: string }
+      - { name: gsc_verification, label: "Google Search Console – kod weryfikacyjny (tylko wartość content=...)", type: string }
+
+  - name: home
+    label: "🏠 Strona główna"
+    type: file
+    path: src/_data/home.json
+    format: json
+    fields:
+      - { name: promo_show, label: Pokaż czerwony pasek promocji na górze, type: boolean }
+      - { name: promo_text, label: Tekst paska promocji, type: string }
+      - { name: hero_eyebrow, label: Mały tekst nad tytułem, type: string }
+      - { name: hero_title, label: Tytuł główny, type: string }
+      - { name: hero_text, label: Tekst pod tytułem, type: text }
+      - { name: hero_image, label: Zdjęcie główne (pionowe lub poziome), type: image }
+      - name: highlights
+        label: Karty „Co robimy najlepiej”
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Tytuł, type: string }
+          - { name: text, label: Opis, type: text }
+          - { name: image, label: Zdjęcie, type: image }
+      - name: popular
+        label: Najczęściej zamawiane
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Nazwa, type: string }
+          - { name: desc, label: Skład, type: string }
+          - { name: price, label: Cena (np. od 15 zł), type: string }
+      - { name: about_title, label: O nas – tytuł, type: string }
+      - { name: about_text, label: O nas – tekst, type: text }
+      - { name: about_image, label: O nas – zdjęcie, type: image }
+      - name: gallery
+        label: Galeria (zdjęcia)
+        type: image
+        options:
+          multiple:
+            max: 12
+      - name: faq
+        label: Pytania i odpowiedzi (FAQ)
+        type: object
+        list: true
+        fields:
+          - { name: q, label: Pytanie, type: string }
+          - { name: a, label: Odpowiedź, type: text }
+
+  - name: menu
+    label: "🥙 Menu i ceny"
+    type: file
+    path: src/_data/menu.json
+    format: json
+    fields:
+      - { name: intro, label: Tekst nad menu (mięso, sosy), type: text }
+      - { name: note, label: Uwaga pod menu, type: text }
+      - name: categories
+        label: Kategorie
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Nazwa kategorii, type: string }
+          - name: columns
+            label: "Kolumny cen (np. S, XL, XXL albo Cena)"
+            type: string
+            list: true
+          - name: items
+            label: Pozycje
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Nazwa, type: string }
+              - { name: desc, label: Skład, type: string }
+              - name: prices
+                label: "Ceny – w tej samej kolejności co kolumny (puste = brak)"
+                type: string
+                list: true
+
+  - name: reviews
+    label: "⭐ Opinie"
+    type: file
+    path: src/_data/reviews.json
+    format: json
+    list: true
+    fields:
+      - { name: author, label: Autor (imię i inicjał), type: string }
+      - { name: stars, label: Gwiazdki (1–5), type: number }
+      - { name: text, label: Treść opinii, type: text }
+      - { name: source, label: Źródło (np. Opinia w Google), type: string }

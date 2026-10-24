@@ -1,0 +1,14 @@
+{
+  "name": "kebab-ahil-website",
+  "version": "1.0.0",
+  "description": "Strona Kebab Ahil Czarnków (Eleventy + Pages CMS)",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7"
+  },
+  "type": "module",
+  "private": true
+}
